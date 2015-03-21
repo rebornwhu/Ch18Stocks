@@ -27,11 +27,15 @@ int main(int argc, const char * argv[]) {
         [stock3 setCurrentSharePrice:49.51];
         [stock3 setNumberOfShares:80];
         
+        //NSArray *stocks = @[stock1, stock2, stock3];
         
+        NSMutableArray *stocks = [[NSMutableArray alloc] init];
+        [stocks addObject:stock1];
+        [stocks addObject:stock2];
+        [stocks addObject:stock3];
         
-        NSArray *stocks = @[stock1, stock2, stock3];
-        for (BNRStockHolding *mStock in stocks) {
-            NSLog(@"Cost %.2f, value %.2f", [mStock costInDollars], [mStock valueInDollars]);
+        for (BNRStockHolding *stock in stocks) {
+            NSLog(@"Cost %.2f, value %.2f", [stock costInDollars], [stock valueInDollars]);
         }
 
     }
