@@ -10,13 +10,9 @@
 #import "BNRForeignStockHolding.h"
 
 @interface BNRPortfolio : NSObject
-{
-    NSMutableArray *_holdings;
-}
-
-@property (nonatomic, copy) NSArray *holdings;
 
 - (void)addHolding:(BNRStockHolding *)h;
+- (void)removeHolding:(NSInteger)i;
 - (float)totalValue;
 
 

@@ -9,6 +9,16 @@
 #import "BNRPortfolio.h"
 #import "BNRStockHolding.h"
 
+@interface BNRPortfolio ()
+{
+    NSMutableArray *_holdings;
+}
+
+@property (nonatomic, copy) NSArray *holdings;
+
+@end
+
+
 @implementation BNRPortfolio
 
 - (void)setHoldings:(NSArray *)h
@@ -27,6 +37,16 @@
         _holdings = [[NSMutableArray alloc] init];
     }
     [_holdings addObject:h];
+}
+
+- (void)removeHolding:(NSInteger)i
+{
+    if (!_holdings
+        || [_holdings count] - 1 < i) {
+        return;
+    }
+    
+    [_holdings removeObjectAtIndex:i];
 }
 
 
@@ -50,6 +70,5 @@
 
     return [mtbString copy];
 }
-
 
 @end

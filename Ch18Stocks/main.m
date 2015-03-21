@@ -35,7 +35,10 @@ int main(int argc, const char * argv[]) {
         [portfolio addHolding:stock1];
         [portfolio addHolding:stock2];
         [portfolio addHolding:stock3];
-        NSLog(@"%@", portfolio);
+        NSLog(@"\n%@", portfolio);
+        
+        [portfolio removeHolding:1];
+        NSLog(@"\n\n%@", portfolio);
 
     }
     return 0;
