@@ -10,6 +10,7 @@
 
 @interface BNRStockHolding : NSObject
 
+@property (nonatomic) NSString *symbol;
 @property (nonatomic) float purchaseSharePrice;
 @property (nonatomic) float currentSharePrice;
 @property (nonatomic) int numberOfShares;
